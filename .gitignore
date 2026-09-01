@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Environment
+.env
+
+# Large/local datasets
+data/input/*.csv
+data/samples/*.csv
+*.csv
+
+# Runtime
+VIVA_APP/runtime/
+APP/runtime/
+APP_FINAL/runtime/
+VIVA_APP/.venv/
+APP/.venv/
+APP_FINAL/.venv/
+
+# Local archives
+*.zip
+*.rar
+*.7z
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

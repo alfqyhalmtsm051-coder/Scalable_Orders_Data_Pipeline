@@ -1,0 +1,73 @@
+{
+  "phase": "elt_final_write",
+  "raw_run_id": "run-20260901T213342Z-d53d30c2",
+  "processing_run_id": "quality-20260901T213345Z-31923b7e",
+  "raw_count": 10000,
+  "classification": {
+    "valid_count": 7177,
+    "corrected_count": 2140,
+    "quarantine_count": 683,
+    "classified_total": 10000
+  },
+  "validated_write": {
+    "inserted_count": 9317,
+    "updated_count": 0,
+    "unchanged_count": 0
+  },
+  "quarantine_write": {
+    "inserted_count": 683,
+    "updated_count": 0,
+    "unchanged_count": 0
+  },
+  "collection_counts": {
+    "orders_validated": 9317,
+    "orders_quarantine_current_run": 683
+  },
+  "duplicates": {
+    "group_count": 4,
+    "record_count": 8
+  },
+  "error_code_counts": {
+    "CORRUPTED_ITEMS_JSON": 126,
+    "MISSING_CUSTOMER_ID": 122,
+    "EMAIL_INVALID_UNRECOVERABLE": 120,
+    "MISSING_ORDER_ID": 85,
+    "PHONE_INVALID_UNRECOVERABLE": 75,
+    "STATUS_UNKNOWN": 75,
+    "EMPTY_ITEMS": 65,
+    "CURRENCY_UNKNOWN": 65,
+    "INVALID_IMPOSSIBLE_DATE": 63,
+    "MULTIPLE_CONFLICTING_ERRORS": 61,
+    "TOTAL_UNKNOWN_UNRECOVERABLE": 60,
+    "DUPLICATE_ORDER_ID": 8
+  },
+  "correction_rule_counts": {
+    "ARABIC_DIGITS_TO_LATIN": 535,
+    "ARABIC_DECIMAL_SEPARATOR_NORMALIZED": 412,
+    "WHITESPACE_TRIMMED": 229,
+    "EMAIL_REPEATED_SYMBOLS": 218,
+    "DATE_NORMALIZED": 217,
+    "PHONE_NORMALIZED_YE": 213,
+    "ORDER_TOTAL_RECALCULATED": 160,
+    "CURRENCY_NORMALIZED_YER": 114,
+    "KNOWN_PRICE_WORD_TO_NUMBER": 111,
+    "THOUSANDS_SEPARATOR_NORMALIZED": 103,
+    "CURRENCY_SUFFIX_REMOVED": 103,
+    "NEGATIVE_QTY_DERIVED": 77,
+    "ITEM_TOTAL_RESIDUAL_DERIVED": 69,
+    "ITEM_PRICE_RESIDUAL_DERIVED": 69,
+    "STATUS_SYNONYM_NORMALIZED": 44
+  },
+  "performance": {
+    "elapsed_seconds": 3.4614,
+    "throughput_records_per_second": 2889.04
+  },
+  "consistency": {
+    "raw_equals_classified": true,
+    "matches_dry_run": null,
+    "dry_run_contract_used": false,
+    "raw_run_selection": "explicit",
+    "validated_count_correct": true,
+    "quarantine_count_correct": true
+  }
+}

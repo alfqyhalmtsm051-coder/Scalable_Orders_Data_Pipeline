@@ -1,0 +1,108 @@
+{
+  "phase": "phase_14c_large_pyspark_raw",
+  "mode": "production_raw_append",
+  "run_id": "pipeline-20260901T213259Z-2e44e3fa",
+  "run_id_source": "external",
+  "input": {
+    "path": "C:\\Users\\Raidan\\Desktop\\VIVA_TEST_DATA\\orders_demo_large_650k.csv",
+    "file_name": "orders_demo_large_650k.csv",
+    "file_size_bytes": 285277708,
+    "file_size_mb": 272.06
+  },
+  "engine": {
+    "engine_used": "pyspark",
+    "spark_version": "4.2.0",
+    "scala_version": "2.13.18",
+    "master": "local[*]",
+    "spark_ui": "http://127.0.0.1:4040",
+    "input_partitions": 12,
+    "output_partitions": 12,
+    "execution_mode": "large_streaming_no_cache",
+    "cache_enabled": false
+  },
+  "schema": {
+    "explicit": true,
+    "raw_fields_are_strings": true,
+    "source_columns": [
+      "order_id",
+      "order_date",
+      "status",
+      "customer_id",
+      "customer_name",
+      "customer_phone",
+      "customer_email",
+      "city",
+      "district",
+      "delivery_type",
+      "delivery_cost",
+      "payment_method",
+      "payment_status",
+      "payment_amount",
+      "currency",
+      "total_amount",
+      "items_json"
+    ],
+    "corrupt_record_field": "_corrupt_record"
+  },
+  "counts": {
+    "rows_read": 650000,
+    "csv_corrupt_records": 0,
+    "mongo_run_count": 650000,
+    "mongo_total_count": 650000
+  },
+  "performance": {
+    "write_elapsed_seconds": 12.1353,
+    "total_elapsed_seconds": 39.8262,
+    "throughput_records_per_second": 16320.92
+  },
+  "connector_jars": [
+    "C:\\Users\\Raidan\\.m2\\repository\\org\\mongodb\\spark\\mongo-spark-connector_2.13\\11.1.0\\mongo-spark-connector_2.13-11.1.0.jar",
+    "C:\\Users\\Raidan\\.m2\\repository\\org\\mongodb\\mongodb-driver-sync\\5.1.4\\mongodb-driver-sync-5.1.4.jar",
+    "C:\\Users\\Raidan\\.m2\\repository\\org\\mongodb\\mongodb-driver-core\\5.1.4\\mongodb-driver-core-5.1.4.jar",
+    "C:\\Users\\Raidan\\.m2\\repository\\org\\mongodb\\bson\\5.1.4\\bson-5.1.4.jar",
+    "C:\\Users\\Raidan\\.m2\\repository\\org\\mongodb\\bson-record-codec\\5.1.4\\bson-record-codec-5.1.4.jar"
+  ],
+  "production_counts_before": {
+    "orders_raw": 0,
+    "orders_validated": 0,
+    "orders_quarantine": 0
+  },
+  "production_counts_after": {
+    "orders_raw": 650000,
+    "orders_validated": 0,
+    "orders_quarantine": 0
+  },
+  "production_unchanged": false,
+  "production_safety_pass": true,
+  "production_raw_mode": true,
+  "sample_document": {
+    "run_id": "pipeline-20260901T213259Z-2e44e3fa",
+    "source_file": "orders_demo_large_650k.csv",
+    "source_path": "C:\\Users\\Raidan\\Desktop\\VIVA_TEST_DATA\\orders_demo_large_650k.csv",
+    "source_row_number": null,
+    "source_row_number_available": false,
+    "ingested_at": "2026-09-01 21:33:27.259000",
+    "engine_used": "pyspark",
+    "spark_partition_id": 1,
+    "csv_corrupt_record": null,
+    "raw_record": {
+      "order_id": "طلب-354867",
+      "order_date": "2025-02-23T17:16:00",
+      "status": "ملغي",
+      "customer_id": "عميل-254867",
+      "customer_name": "ريم عادل",
+      "customer_phone": "702086406",
+      "customer_email": "user349959@example.com",
+      "city": "ذمار",
+      "district": "خور مكسر",
+      "delivery_type": "سريع",
+      "delivery_cost": "5000.0",
+      "payment_method": "محفظة إلكترونية",
+      "payment_status": "تم الدفع",
+      "payment_amount": "420000.0",
+      "currency": "YER",
+      "total_amount": "420000.0",
+      "items_json": "[{\"sku\":\"SKU-1010\",\"name\":\"هاتف سامسونج A54\",\"qty\":2,\"unit_price\":194000.0,\"total\":388000.0},{\"sku\":\"SKU-1008\",\"name\":\"محول HDMI\",\"qty\":3,\"unit_price\":7000.0,\"total\":21000.0},{\"sku\":\"SKU-1009\",\"name\":\"شاحن سريع\",\"qty\":1,\"unit_price\":6000.0,\"total\":6000.0}]"
+    }
+  }
+}

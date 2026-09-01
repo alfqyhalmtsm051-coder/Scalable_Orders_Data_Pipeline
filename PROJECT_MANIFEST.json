@@ -1,0 +1,26 @@
+{
+  "project": "Scalable Orders Data Pipeline",
+  "database": "orders_bigdata_pipeline",
+  "entry_point": "src.pipeline_entry",
+  "architecture": {
+    "small_engine": "python_batch",
+    "large_engine": "pyspark",
+    "raw_collection": "orders_raw",
+    "validated_collection": "orders_validated",
+    "quarantine_collection": "orders_quarantine"
+  },
+  "core_modules": [
+    "compliance_check.py",
+    "distributed_ingest.py",
+    "mongo_backend.py",
+    "pipeline_entry.py",
+    "python_batch_ingest.py",
+    "quality_elt.py",
+    "quality_preview.py",
+    "record_quality.py",
+    "run_run_metrics.py",
+    "sample_builder.py",
+    "size_router.py",
+    "upsert_validation.py"
+  ]
+}

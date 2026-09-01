@@ -1,0 +1,17 @@
+﻿{
+    "project":  "Scalable Orders Data Pipeline",
+    "generated_at":  "2026-09-02T00:45:03.6149725+03:00",
+    "count":  10,
+    "files":  [
+                  "01_architecture.png",
+                  "02_small_router.png",
+                  "03_large_router.png",
+                  "04_quality_100k.png",
+                  "05_spark_650k.png",
+                  "06_quality_30m.png",
+                  "07_consistency.png",
+                  "08_mongodb.png",
+                  "09_quality_rules.png",
+                  "10_verification.png"
+              ]
+}
