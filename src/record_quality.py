@@ -105,6 +105,10 @@ ERR_ITEM_QUANTITY_INVALID = (
     "ITEM_QUANTITY_INVALID"
 )
 
+ERR_ITEM_SKU_MISSING = (
+    "ITEM_SKU_MISSING"
+)
+
 ERR_ITEM_COMPONENTS_CONFLICT = (
     "ITEM_COMPONENTS_CONFLICT"
 )
@@ -164,6 +168,10 @@ RULE_STATUS_SYNONYM = (
 
 RULE_NEGATIVE_QTY = (
     "NEGATIVE_QTY_DERIVED"
+)
+
+RULE_ITEM_QTY_STRING = (
+    "ITEM_QTY_STRING_NORMALIZED"
 )
 
 RULE_ITEM_TOTAL = (
@@ -1291,9 +1299,22 @@ def item_number(
         field
     ] = corrected
 
-    for rule_code in numeric_rule_codes(
+    rule_codes = numeric_rule_codes(
         original
+    )
+
+    if (
+        field == "qty"
+        and isinstance(original, str)
+        and parsed > 0
+        and parsed == parsed.to_integral_value()
+        and not rule_codes
     ):
+        rule_codes.append(
+            RULE_ITEM_QTY_STRING
+        )
+
+    for rule_code in rule_codes:
 
         add_correction(
             corrections,
@@ -1400,6 +1421,17 @@ def clean_items(
         items
     ):
 
+        if is_blank(
+            item.get("sku")
+        ):
+            add_error(
+                errors,
+                ERR_ITEM_SKU_MISSING,
+                f"items_json[{index}].sku",
+                item.get("sku"),
+                "Item SKU is missing.",
+            )
+
         qty = item_number(
             item,
             "qty",
@@ -1428,73 +1460,13 @@ def clean_items(
             qty is not None
             and qty < 0
         ):
-
-            candidate = None
-
-            if (
-                unit_price is not None
-                and unit_price > 0
-                and item_total is not None
-                and item_total >= 0
-            ):
-
-                candidate = (
-                    item_total
-                    / unit_price
-                )
-
-
-            if (
-                positive_integer(
-                    candidate
-                )
-                and order_corroborated
-            ):
-
-                original_qty = (
-                    item[
-                        "qty"
-                    ]
-                )
-
-                qty = (
-                    candidate
-                )
-
-                item[
-                    "qty"
-                ] = to_number(
-                    candidate
-                )
-
-                add_correction(
-                    corrections,
-                    f"items_json[{index}].qty",
-                    original_qty,
-                    item[
-                        "qty"
-                    ],
-                    RULE_NEGATIVE_QTY,
-                    details=(
-                        "Derived as item_total / unit_price "
-                        "and corroborated by order total."
-                    ),
-                )
-
-            else:
-
-                add_error(
-                    errors,
-                    ERR_VALUE_NEGATIVE_AMBIGUOUS,
-                    f"items_json[{index}].qty",
-                    item.get(
-                        "qty"
-                    ),
-                    (
-                        "Negative quantity cannot "
-                        "be resolved safely."
-                    ),
-                )
+            add_error(
+                errors,
+                ERR_VALUE_NEGATIVE_AMBIGUOUS,
+                f"items_json[{index}].qty",
+                item.get("qty"),
+                "Negative quantity is not allowed.",
+            )
 
 
         if (

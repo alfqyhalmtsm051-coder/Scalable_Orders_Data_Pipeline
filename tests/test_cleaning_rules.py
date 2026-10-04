@@ -184,14 +184,14 @@ def test_date_normalization():
     )
 
 
-def test_negative_qty_is_derived():
+def test_negative_qty_is_quarantined():
     record = base_record()
 
     record["items_json"] = json.dumps(
         [
             {
                 "sku": "SKU-1",
-                "name": "منتج",
+                "name": "????",
                 "qty": -2,
                 "unit_price": 5000,
                 "total": 15000,
@@ -210,16 +210,11 @@ def test_negative_qty_is_derived():
         ["items_json"]
     )
 
-    assert items[0]["qty"] == 3
-
-    assert (
-        RULE_NEGATIVE_QTY
-        in rule_codes(result)
-    )
+    assert items[0]["qty"] == -2
 
     assert (
         result["quality_status"]
-        == QUALITY_CORRECTED
+        == QUALITY_QUARANTINED
     )
 
 

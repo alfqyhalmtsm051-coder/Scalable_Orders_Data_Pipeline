@@ -1,66 +1,62 @@
 {
   "phase": "elt_final_write",
-  "raw_run_id": "run-20260901T213342Z-d53d30c2",
-  "processing_run_id": "quality-20260901T213345Z-31923b7e",
-  "raw_count": 10000,
+  "raw_run_id": "run-20261004T180901Z-a0a8a10e",
+  "processing_run_id": "quality-20261004T180908Z-5c9b452d",
+  "raw_count": 20000,
   "classification": {
-    "valid_count": 7177,
-    "corrected_count": 2140,
-    "quarantine_count": 683,
-    "classified_total": 10000
+    "valid_count": 12000,
+    "corrected_count": 5000,
+    "quarantine_count": 3000,
+    "classified_total": 20000
   },
   "validated_write": {
-    "inserted_count": 9317,
+    "inserted_count": 17000,
     "updated_count": 0,
     "unchanged_count": 0
   },
   "quarantine_write": {
-    "inserted_count": 683,
+    "inserted_count": 3000,
     "updated_count": 0,
     "unchanged_count": 0
   },
   "collection_counts": {
-    "orders_validated": 9317,
-    "orders_quarantine_current_run": 683
+    "orders_validated": 17000,
+    "orders_quarantine_current_run": 3000
   },
   "duplicates": {
-    "group_count": 4,
-    "record_count": 8
+    "group_count": 0,
+    "record_count": 0
   },
   "error_code_counts": {
-    "CORRUPTED_ITEMS_JSON": 126,
-    "MISSING_CUSTOMER_ID": 122,
-    "EMAIL_INVALID_UNRECOVERABLE": 120,
-    "MISSING_ORDER_ID": 85,
-    "PHONE_INVALID_UNRECOVERABLE": 75,
-    "STATUS_UNKNOWN": 75,
-    "EMPTY_ITEMS": 65,
-    "CURRENCY_UNKNOWN": 65,
-    "INVALID_IMPOSSIBLE_DATE": 63,
-    "MULTIPLE_CONFLICTING_ERRORS": 61,
-    "TOTAL_UNKNOWN_UNRECOVERABLE": 60,
-    "DUPLICATE_ORDER_ID": 8
+    "EMAIL_INVALID_UNRECOVERABLE": 500,
+    "CORRUPTED_ITEMS_JSON": 500,
+    "MISSING_CUSTOMER_ID": 500,
+    "EMPTY_ITEMS": 250,
+    "STATUS_UNKNOWN": 250,
+    "AMBIGUOUS_NEGATIVE_VALUE": 250,
+    "ITEM_SKU_MISSING": 250,
+    "CURRENCY_UNKNOWN": 250,
+    "INVALID_IMPOSSIBLE_DATE": 250,
+    "TOTAL_UNKNOWN_UNRECOVERABLE": 250,
+    "MULTIPLE_CONFLICTING_ERRORS": 250,
+    "MISSING_ORDER_ID": 250,
+    "PHONE_INVALID_UNRECOVERABLE": 250
   },
   "correction_rule_counts": {
-    "ARABIC_DIGITS_TO_LATIN": 535,
-    "ARABIC_DECIMAL_SEPARATOR_NORMALIZED": 412,
-    "WHITESPACE_TRIMMED": 229,
-    "EMAIL_REPEATED_SYMBOLS": 218,
-    "DATE_NORMALIZED": 217,
-    "PHONE_NORMALIZED_YE": 213,
-    "ORDER_TOTAL_RECALCULATED": 160,
-    "CURRENCY_NORMALIZED_YER": 114,
-    "KNOWN_PRICE_WORD_TO_NUMBER": 111,
-    "THOUSANDS_SEPARATOR_NORMALIZED": 103,
-    "CURRENCY_SUFFIX_REMOVED": 103,
-    "NEGATIVE_QTY_DERIVED": 77,
-    "ITEM_TOTAL_RESIDUAL_DERIVED": 69,
-    "ITEM_PRICE_RESIDUAL_DERIVED": 69,
-    "STATUS_SYNONYM_NORMALIZED": 44
+    "ARABIC_DIGITS_TO_LATIN": 1000,
+    "ARABIC_DECIMAL_SEPARATOR_NORMALIZED": 1000,
+    "CURRENCY_NORMALIZED_YER": 500,
+    "ITEM_QTY_STRING_NORMALIZED": 500,
+    "ORDER_TOTAL_RECALCULATED": 500,
+    "WHITESPACE_TRIMMED": 500,
+    "DATE_NORMALIZED": 500,
+    "PHONE_NORMALIZED_YE": 500,
+    "THOUSANDS_SEPARATOR_NORMALIZED": 500,
+    "EMAIL_REPEATED_SYMBOLS": 500
   },
   "performance": {
-    "elapsed_seconds": 3.4614,
-    "throughput_records_per_second": 2889.04
+    "elapsed_seconds": 13.4443,
+    "throughput_records_per_second": 1487.62
   },
   "consistency": {
     "raw_equals_classified": true,
