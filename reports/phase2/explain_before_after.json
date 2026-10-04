@@ -1,0 +1,303 @@
+{
+  "collection": "orders_validated",
+  "sample_parameters": {
+    "orders_by_status": {
+      "status": "قيد الانتظار"
+    },
+    "orders_by_customer": {
+      "customer_id": "CUST-2"
+    },
+    "orders_by_city_and_date": {
+      "city": "Aden",
+      "start_date": "2026-10-01T00:00:00",
+      "end_date": "2026-10-01T23:59:59.999999"
+    },
+    "orders_by_city": {
+      "city": "Aden"
+    },
+    "orders_by_date_range": {
+      "start_date": "2026-10-01T00:00:00",
+      "end_date": "2026-10-01T23:59:59.999999"
+    }
+  },
+  "dropped_phase2_indexes": [],
+  "created_indexes": [
+    {
+      "name": "ix_phase2_status",
+      "keys": [
+        {
+          "field": "status",
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "name": "ix_phase2_customer_id",
+      "keys": [
+        {
+          "field": "customer_id",
+          "direction": 1
+        }
+      ]
+    },
+    {
+      "name": "ix_phase2_city_order_date",
+      "keys": [
+        {
+          "field": "city",
+          "direction": 1
+        },
+        {
+          "field": "order_date",
+          "direction": 1
+        }
+      ]
+    }
+  ],
+  "before": {
+    "orders_by_status": {
+      "query": "orders_by_status",
+      "filter": {
+        "status": "قيد الانتظار"
+      },
+      "execution_time_ms": 6,
+      "documents_examined": 298,
+      "keys_examined": 0,
+      "documents_returned": 100,
+      "winning_plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 100,
+        "inputStage": {
+          "stage": "COLLSCAN",
+          "filter": {
+            "status": {
+              "$eq": "قيد الانتظار"
+            }
+          },
+          "direction": "forward"
+        }
+      }
+    },
+    "orders_by_customer": {
+      "query": "orders_by_customer",
+      "filter": {
+        "customer_id": "CUST-2"
+      },
+      "execution_time_ms": 0,
+      "documents_examined": 300,
+      "keys_examined": 0,
+      "documents_returned": 15,
+      "winning_plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 100,
+        "inputStage": {
+          "stage": "COLLSCAN",
+          "filter": {
+            "customer_id": {
+              "$eq": "CUST-2"
+            }
+          },
+          "direction": "forward"
+        }
+      }
+    },
+    "orders_by_city_and_date": {
+      "query": "orders_by_city_and_date",
+      "filter": {
+        "city": "Aden",
+        "order_date": {
+          "$gte": "2026-10-01T00:00:00",
+          "$lte": "2026-10-01T23:59:59.999999"
+        }
+      },
+      "execution_time_ms": 2,
+      "documents_examined": 300,
+      "keys_examined": 0,
+      "documents_returned": 32,
+      "winning_plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 100,
+        "inputStage": {
+          "stage": "COLLSCAN",
+          "filter": {
+            "$and": [
+              {
+                "city": {
+                  "$eq": "Aden"
+                }
+              },
+              {
+                "order_date": {
+                  "$lte": "2026-10-01T23:59:59.999999"
+                }
+              },
+              {
+                "order_date": {
+                  "$gte": "2026-10-01T00:00:00"
+                }
+              }
+            ]
+          },
+          "direction": "forward"
+        }
+      }
+    }
+  },
+  "after": {
+    "orders_by_status": {
+      "query": "orders_by_status",
+      "filter": {
+        "status": "قيد الانتظار"
+      },
+      "execution_time_ms": 7,
+      "documents_examined": 100,
+      "keys_examined": 100,
+      "documents_returned": 100,
+      "winning_plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 100,
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "status": 1
+            },
+            "indexName": "ix_phase2_status",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "status": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "status": [
+                "[\"قيد الانتظار\", \"قيد الانتظار\"]"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "orders_by_customer": {
+      "query": "orders_by_customer",
+      "filter": {
+        "customer_id": "CUST-2"
+      },
+      "execution_time_ms": 24,
+      "documents_examined": 15,
+      "keys_examined": 15,
+      "documents_returned": 15,
+      "winning_plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 100,
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "customer_id": 1
+            },
+            "indexName": "ix_phase2_customer_id",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "customer_id": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "customer_id": [
+                "[\"CUST-2\", \"CUST-2\"]"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "orders_by_city_and_date": {
+      "query": "orders_by_city_and_date",
+      "filter": {
+        "city": "Aden",
+        "order_date": {
+          "$gte": "2026-10-01T00:00:00",
+          "$lte": "2026-10-01T23:59:59.999999"
+        }
+      },
+      "execution_time_ms": 13,
+      "documents_examined": 32,
+      "keys_examined": 32,
+      "documents_returned": 32,
+      "winning_plan": {
+        "isCached": false,
+        "stage": "LIMIT",
+        "limitAmount": 100,
+        "inputStage": {
+          "stage": "FETCH",
+          "inputStage": {
+            "stage": "IXSCAN",
+            "keyPattern": {
+              "city": 1,
+              "order_date": 1
+            },
+            "indexName": "ix_phase2_city_order_date",
+            "isMultiKey": false,
+            "multiKeyPaths": {
+              "city": [],
+              "order_date": []
+            },
+            "isUnique": false,
+            "isSparse": false,
+            "isPartial": false,
+            "indexVersion": 2,
+            "direction": "forward",
+            "indexBounds": {
+              "city": [
+                "[\"Aden\", \"Aden\"]"
+              ],
+              "order_date": [
+                "[\"2026-10-01T00:00:00\", \"2026-10-01T23:59:59.999999\"]"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "comparison": {
+    "orders_by_status": {
+      "before_documents_examined": 298,
+      "after_documents_examined": 100,
+      "before_keys_examined": 0,
+      "after_keys_examined": 100,
+      "before_execution_time_ms": 6,
+      "after_execution_time_ms": 7
+    },
+    "orders_by_customer": {
+      "before_documents_examined": 300,
+      "after_documents_examined": 15,
+      "before_keys_examined": 0,
+      "after_keys_examined": 15,
+      "before_execution_time_ms": 0,
+      "after_execution_time_ms": 24
+    },
+    "orders_by_city_and_date": {
+      "before_documents_examined": 300,
+      "after_documents_examined": 32,
+      "before_keys_examined": 0,
+      "after_keys_examined": 32,
+      "before_execution_time_ms": 2,
+      "after_execution_time_ms": 13
+    }
+  }
+}

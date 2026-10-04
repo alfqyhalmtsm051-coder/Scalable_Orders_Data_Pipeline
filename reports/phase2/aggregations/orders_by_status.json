@@ -1,0 +1,22 @@
+{
+  "report_name": "orders_by_status",
+  "source_collection": "orders_validated",
+  "result_count": 3,
+  "results": [
+    {
+      "orders_count": 100,
+      "total_sales": 450000,
+      "status": "قيد الانتظار"
+    },
+    {
+      "orders_count": 100,
+      "total_sales": 650000,
+      "status": "تم التسليم"
+    },
+    {
+      "orders_count": 100,
+      "total_sales": 250000,
+      "status": "مؤكد"
+    }
+  ]
+}

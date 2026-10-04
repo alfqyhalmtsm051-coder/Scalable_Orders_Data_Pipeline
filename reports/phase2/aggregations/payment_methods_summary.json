@@ -1,0 +1,19 @@
+{
+  "report_name": "payment_methods_summary",
+  "source_collection": "orders_validated",
+  "result_count": 2,
+  "results": [
+    {
+      "orders_count": 150,
+      "total_sales": 675000,
+      "average_order_value": 4500.0,
+      "payment_method": "card"
+    },
+    {
+      "orders_count": 150,
+      "total_sales": 675000,
+      "average_order_value": 4500.0,
+      "payment_method": "cash"
+    }
+  ]
+}

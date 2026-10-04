@@ -1,0 +1,25 @@
+{
+  "report_name": "sales_by_city",
+  "source_collection": "orders_validated",
+  "result_count": 3,
+  "results": [
+    {
+      "orders_count": 100,
+      "total_sales": 650000,
+      "average_order_value": 6500.0,
+      "city": "Taiz"
+    },
+    {
+      "orders_count": 100,
+      "total_sales": 450000,
+      "average_order_value": 4500.0,
+      "city": "Aden"
+    },
+    {
+      "orders_count": 100,
+      "total_sales": 250000,
+      "average_order_value": 2500.0,
+      "city": "Sanaa"
+    }
+  ]
+}

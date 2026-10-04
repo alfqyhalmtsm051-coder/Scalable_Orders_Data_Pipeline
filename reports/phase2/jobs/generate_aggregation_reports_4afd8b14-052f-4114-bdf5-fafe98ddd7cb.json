@@ -1,0 +1,34 @@
+{
+  "run_id": "4afd8b14-052f-4114-bdf5-fafe98ddd7cb",
+  "job_name": "generate_aggregation_reports",
+  "triggered_by": "manual",
+  "start_time": "2026-10-04 16:15:40.260258+00:00",
+  "end_time": "2026-10-04 16:15:40.329581+00:00",
+  "status": "SUCCESS",
+  "result": {
+    "reports_count": 5,
+    "reports": {
+      "sales_by_city": {
+        "result_count": 3,
+        "report_file": "D:\\Scalable_Orders_Data_Pipeline\\reports\\phase2\\aggregations\\sales_by_city.json"
+      },
+      "orders_by_status": {
+        "result_count": 3,
+        "report_file": "D:\\Scalable_Orders_Data_Pipeline\\reports\\phase2\\aggregations\\orders_by_status.json"
+      },
+      "top_customers": {
+        "result_count": 10,
+        "report_file": "D:\\Scalable_Orders_Data_Pipeline\\reports\\phase2\\aggregations\\top_customers.json"
+      },
+      "payment_methods_summary": {
+        "result_count": 2,
+        "report_file": "D:\\Scalable_Orders_Data_Pipeline\\reports\\phase2\\aggregations\\payment_methods_summary.json"
+      },
+      "sales_by_month": {
+        "result_count": 1,
+        "report_file": "D:\\Scalable_Orders_Data_Pipeline\\reports\\phase2\\aggregations\\sales_by_month.json"
+      }
+    }
+  },
+  "error": null
+}

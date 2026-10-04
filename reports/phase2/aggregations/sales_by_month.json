@@ -1,0 +1,13 @@
+{
+  "report_name": "sales_by_month",
+  "source_collection": "orders_validated",
+  "result_count": 1,
+  "results": [
+    {
+      "orders_count": 300,
+      "total_sales": 1350000,
+      "average_order_value": 4500.0,
+      "month": "2026-10"
+    }
+  ]
+}

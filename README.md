@@ -220,3 +220,26 @@ bounded-memory processing, and the Spark design is documented in:
 `docs/DESIGN_DECISIONS.md`
 
 This document is also intended as a technical reference for the project viva.
+---
+
+# Phase 2 - Final Project Additions
+
+Phase 2 extends the original Scalable Orders Data Pipeline without replacing the Phase 1 ingestion pipeline.
+
+## Final Features
+
+- 5 MongoDB queries
+- 3 query indexes
+- Explain before/after index comparison
+- 5 aggregation reports
+- 2 materialized views
+- Incremental refresh using `last_updated_at`
+- 2 scheduled jobs
+- Manual job execution and execution logs
+- Unified FastAPI
+- Swagger/OpenAPI documentation
+
+## Installation
+
+```powershell
+python -m pip install -r requirements.txt

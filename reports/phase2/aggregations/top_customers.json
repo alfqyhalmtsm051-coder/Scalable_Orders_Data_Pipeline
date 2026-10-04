@@ -1,0 +1,77 @@
+{
+  "report_name": "top_customers",
+  "source_collection": "orders_validated",
+  "result_count": 10,
+  "results": [
+    {
+      "orders_count": 15,
+      "total_spent": 97500,
+      "average_order_value": 6500.0,
+      "customer_id": "CUST-20",
+      "customer_name": "Customer 20"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 97500,
+      "average_order_value": 6500.0,
+      "customer_id": "CUST-5",
+      "customer_name": "Customer 5"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 97500,
+      "average_order_value": 6500.0,
+      "customer_id": "CUST-15",
+      "customer_name": "Customer 15"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 97500,
+      "average_order_value": 6500.0,
+      "customer_id": "CUST-10",
+      "customer_name": "Customer 10"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 82500,
+      "average_order_value": 5500.0,
+      "customer_id": "CUST-14",
+      "customer_name": "Customer 14"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 82500,
+      "average_order_value": 5500.0,
+      "customer_id": "CUST-9",
+      "customer_name": "Customer 9"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 82500,
+      "average_order_value": 5500.0,
+      "customer_id": "CUST-19",
+      "customer_name": "Customer 19"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 82500,
+      "average_order_value": 5500.0,
+      "customer_id": "CUST-4",
+      "customer_name": "Customer 4"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 67500,
+      "average_order_value": 4500.0,
+      "customer_id": "CUST-8",
+      "customer_name": "Customer 8"
+    },
+    {
+      "orders_count": 15,
+      "total_spent": 67500,
+      "average_order_value": 4500.0,
+      "customer_id": "CUST-3",
+      "customer_name": "Customer 3"
+    }
+  ]
+}
